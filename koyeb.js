@@ -5,12 +5,12 @@ RUN sudo dnf -y update &&\
     sudo dnf install -y git ffmpeg ImageMagick nodejs yarnpkg libwebp &&\
     sudo dnf clean all -y
 
-RUN git clone https://github.com/Toxic1239/Queen-RiasV3_
+RUN git clone https://github.com/Phoenixmdxdxd/Queen-Rias
 
-WORKDIR /root/Queen-RiasV3_
+WORKDIR /root/Queen-Rias
 
-COPY ./root/Queen-RiasV3_
+COPY ./root/Queen-Rias
 
-RUN yarn install
+RUN npm install || yarn install
 
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
